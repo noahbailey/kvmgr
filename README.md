@@ -21,6 +21,20 @@ To specify the VM configuration the other command line parameters can be used:
 | -o   | --os    | focal
 | -n   | --name  | 
 
+### Examples
+
+1. Create a lightweight virtual machine using the latest LTS version: 
+
+        kvmgr.sh --cpus 1 --mem 512 --disk 5G --os focal --name lightvm
+
+2. Create a more powerful virtual machine using an earlier LTS distro: 
+
+        kvmgr.sh --cpus 4 --mem 8192 --disk 60G --os bionic --name appserver1
+
+3. Create a VM with the same options, but using the shorthand flags: 
+
+        kvmgr.sh -c 4 -m 8192 -d 60G -o bionic -n appserver2
+
 ## Config Files
 
 ### defaults.conf
