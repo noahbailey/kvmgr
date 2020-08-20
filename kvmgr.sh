@@ -6,8 +6,8 @@ set -eo pipefail
 
 
 # --> Setup environment
-source ./settings.conf
-NOW=$(date +"%Y-%m-%d")
+source ./defaults.conf
+source ./user.conf 
 
 # --> Parse arguments: 
 if [ -z $1 ]; then 
@@ -89,4 +89,4 @@ virt-install --connect qemu:///system \
     --os-variant ubuntu20.04 \
     --virt-type kvm \
     --graphics none \
-    --network network=default,model=virtio --import
+    --network network=$NET,model=virtio --import
